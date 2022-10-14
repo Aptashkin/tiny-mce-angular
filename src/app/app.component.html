@@ -1,0 +1,8 @@
+<h1>TinyMCE 6 Angular Demo</h1>
+<button type="button" (click)="_logEditorContent()">Log Editor Content</button>
+
+<editor
+    [formControl]="_formControl"
+    [init]="_config"
+    [disabled]="false"
+></editor>
