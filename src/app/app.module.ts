@@ -4,16 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RichTextEditorComponent } from './rich-text-editor/rich-text-editor.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RichTextEditorComponent
   ],
   imports: [
     BrowserModule,
     EditorModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   bootstrap: [AppComponent],
   providers: [

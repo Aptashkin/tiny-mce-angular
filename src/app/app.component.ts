@@ -69,8 +69,4 @@ export class AppComponent {
       "</tbody>\n" +
       "</table>");
 
-  protected _logEditorContent(): void {
-    console.log(<string> this._editor?.editor.getContent());
-  }
-
 }
