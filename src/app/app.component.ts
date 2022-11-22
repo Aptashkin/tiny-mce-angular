@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { EditorComponent } from '@tinymce/tinymce-angular';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -9,11 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class AppComponent {
 
-  @ViewChild(EditorComponent) private readonly _editor?: EditorComponent;
-
   protected _config = {
-    base_url: '/tinymce',
-    suffix: '.min',
     plugins: 'lists link image table autoresize',
     toolbar_sticky: true,
     menubar: false,

@@ -50,6 +50,9 @@ export class RichTextEditorComponent implements AfterViewInit, OnDestroy, Contro
 	private __ngZone = inject(NgZone);
 
 	protected _elementId = "rich-text-editor-id";
+
+	private __tinyCloudUrl = "https://cdn.tiny.cloud/1/no-api-key/tinymce/6.2.0-10";
+
 	private __editor: TinyMCEEditor | undefined;
 
 	private __destroy$ = new Subject<void>();
@@ -115,9 +118,10 @@ export class RichTextEditorComponent implements AfterViewInit, OnDestroy, Contro
 		const finalInit = {
 			...this.init,
 			selector: '#' + this._elementId,
-			skin: 'oxide',
 			plugins: this.plugins || (this.init && this.init.plugins),
 			toolbar: this.toolbar || (this.init && this.init.toolbar),
+			skin_url: `${ this.__tinyCloudUrl }/skins/ui/oxide`,
+			content_css: `${ this.__tinyCloudUrl }/skins/ui/oxide/content.min.css`,
 			setup: (editor: any) => {
 				this.__editor = editor;
 
